@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="zh-CN">
 <head>
@@ -60,9 +62,9 @@
     <section class="section notes shell" id="notes">
       <div class="section-head"><div><span class="section-no">03</span><h2>最近在写</h2></div><p>记录思考，也记录变化。</p></div>
       <div class="note-list">
-        <a href="#contact"><time>2026.08</time><h3>如何把一个模糊想法做成真正可用的产品</h3><span>↗</span></a>
-        <a href="#contact"><time>2026.07</time><h3>我的个人知识管理系统：从收集到输出</h3><span>↗</span></a>
-        <a href="#contact"><time>2026.06</time><h3>用 AI 编程之后，我重新理解了“动手”</h3><span>↗</span></a>
+        {% for post in site.posts limit: 6 %}
+        <a href="{{ post.url | relative_url }}"><time>{{ post.date | date: "%Y.%m" }}</time><h3>{{ post.title }}</h3><span>↗</span></a>
+        {% endfor %}
       </div>
     </section>
   </main>
