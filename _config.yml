@@ -1,0 +1,9 @@
+title: Jingyao Wu
+description: 数学、猫与创造
+lang: zh-CN
+url: https://jingyaou.github.io
+timezone: Asia/Shanghai
+markdown: kramdown
+permalink: /notes/:year/:month/:day/:title/
+exclude:
+  - README.md
