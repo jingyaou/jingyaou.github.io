@@ -7,3 +7,4 @@ markdown: kramdown
 permalink: /notes/:year/:month/:day/:title/
 exclude:
   - README.md
+# GitHub Pages 自动构建随笔
