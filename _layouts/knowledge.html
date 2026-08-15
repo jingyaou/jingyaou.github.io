@@ -8,6 +8,52 @@
   <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/post.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/knowledge/knowledge.css' | relative_url }}">
+  <script>
+    window.MathJax = {tex: {inlineMath: [['
+<body>
+  <header class="nav shell">
+    <a class="brand" href="{{ '/' | relative_url }}">JW<span>.</span></a>
+    <nav><a href="{{ '/knowledge/' | relative_url }}">知识库</a><a href="{{ '/books/' | relative_url }}">书籍</a><a href="{{ '/#notes' | relative_url }}">随笔</a><a href="{{ '/#about' | relative_url }}">关于</a></nav>
+    <a class="nav-cta" href="{{ '/knowledge/' | relative_url }}">所有笔记 ↗</a>
+  </header>
+  <main class="post-page shell">
+    <a class="post-back" href="{{ '/knowledge/' | relative_url }}">← 返回知识库</a>
+    <article>
+      <header class="post-head">
+        <div class="knowledge-meta"><span>{{ page.category | default: "未分类" }}</span>{% if page.date %}<time>{{ page.date | date: "%Y 年 %m 月 %d 日" }}</time>{% endif %}</div>
+        <h1>{{ page.title }}</h1>
+        {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+      </header>
+      <div class="post-content">{{ content }}</div>
+    </article>
+  </main>
+  <footer><div class="shell post-footer"><p>© 2026 Jingyao Wu.</p><a href="{{ '/' | relative_url }}">返回主页 ↑</a></div></footer>
+</body>
+</html>
+, '
+<body>
+  <header class="nav shell">
+    <a class="brand" href="{{ '/' | relative_url }}">JW<span>.</span></a>
+    <nav><a href="{{ '/knowledge/' | relative_url }}">知识库</a><a href="{{ '/books/' | relative_url }}">书籍</a><a href="{{ '/#notes' | relative_url }}">随笔</a><a href="{{ '/#about' | relative_url }}">关于</a></nav>
+    <a class="nav-cta" href="{{ '/knowledge/' | relative_url }}">所有笔记 ↗</a>
+  </header>
+  <main class="post-page shell">
+    <a class="post-back" href="{{ '/knowledge/' | relative_url }}">← 返回知识库</a>
+    <article>
+      <header class="post-head">
+        <div class="knowledge-meta"><span>{{ page.category | default: "未分类" }}</span>{% if page.date %}<time>{{ page.date | date: "%Y 年 %m 月 %d 日" }}</time>{% endif %}</div>
+        <h1>{{ page.title }}</h1>
+        {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+      </header>
+      <div class="post-content">{{ content }}</div>
+    </article>
+  </main>
+  <footer><div class="shell post-footer"><p>© 2026 Jingyao Wu.</p><a href="{{ '/' | relative_url }}">返回主页 ↑</a></div></footer>
+</body>
+</html>
+]], displayMath: [['$', '$']]}};
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
   <header class="nav shell">
