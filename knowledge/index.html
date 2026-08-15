@@ -1,0 +1,58 @@
+---
+---
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Jingyao Wu 的个人知识库：数学概念、学习笔记与问题整理。">
+  <title>知识库 — Jingyao Wu</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="knowledge.css">
+</head>
+<body>
+  <header class="nav shell">
+    <a class="brand" href="../">JW<span>.</span></a>
+    <nav><a href="./">知识库</a><a href="../books/">书籍</a><a href="../#notes">随笔</a><a href="../#about">关于</a></nav>
+    <a class="nav-cta" href="../">返回主页 ↗</a>
+  </header>
+
+  <main class="knowledge-home shell">
+    <section class="knowledge-hero">
+      <div>
+        <span class="section-no">KNOWLEDGE / 知识库</span>
+        <h1>把知识<br>慢慢连起来。</h1>
+      </div>
+      <p>这里放数学概念、读书记录和学习过程中遇到的问题。每一篇笔记都不必完美，只要比昨天更清楚一点。</p>
+    </section>
+
+    <section class="knowledge-stats" aria-label="知识库概览">
+      <div><strong>{{ site.knowledge | size }}</strong><span>篇笔记</span></div>
+      <div><strong>∞</strong><span>持续更新</span></div>
+      <div><strong>∑</strong><span>数学为主</span></div>
+    </section>
+
+    <section class="knowledge-list">
+      <div class="knowledge-heading">
+        <span class="section-no">所有笔记</span>
+        <p>按更新时间排列</p>
+      </div>
+      {% assign sorted_notes = site.knowledge | sort: "date" | reverse %}
+      {% for note in sorted_notes %}
+      <a class="knowledge-item" href="{{ note.url | relative_url }}">
+        <div class="knowledge-number">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</div>
+        <div>
+          <span class="knowledge-category">{{ note.category | default: "未分类" }}</span>
+          <h2>{{ note.title }}</h2>
+          {% if note.description %}<p>{{ note.description }}</p>{% endif %}
+        </div>
+        <time>{% if note.date %}{{ note.date | date: "%Y.%m.%d" }}{% endif %}</time>
+        <span class="knowledge-arrow">↗</span>
+      </a>
+      {% endfor %}
+    </section>
+  </main>
+
+  <footer><div class="shell post-footer"><p>© 2026 Jingyao Wu.</p><a href="../">返回主页 ↑</a></div></footer>
+</body>
+</html>
